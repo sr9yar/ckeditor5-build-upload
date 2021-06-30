@@ -2,7 +2,7 @@
   "name": "ckeditor5-build-upload",
   "author": "CKSource",
   "description": "A custom CKEditor 5 build with simple upload adapter included.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "./build/ckeditor.js",
   "devDependencies": {
