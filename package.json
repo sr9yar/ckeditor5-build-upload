@@ -4,7 +4,6 @@
   "description": "A custom CKEditor 5 build with simple upload adapter included.",
   "version": "0.0.1",
   "license": "SEE LICENSE IN LICENSE.md",
-  "private": true,
   "main": "./build/ckeditor.js",
   "devDependencies": {
     "@ckeditor/ckeditor5-autoformat": "^28.0.0",
@@ -43,5 +42,18 @@
   },
   "scripts": {
     "build": "webpack --mode production"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sr9yar/ckeditor5-build-upload.git"
+  },
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "build"
+  ],
+  "bugs": {
+    "url": "https://github.com/sr9yar/ckeditor5-build-upload/issues"
+  },
+  "homepage": "https://github.com/sr9yar/ckeditor5-build-upload#readme"
 }
