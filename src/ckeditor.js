@@ -31,6 +31,7 @@ import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
 import ListStyle from '@ckeditor/ckeditor5-list/src/liststyle.js';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
+import MediaEmbedEditing from '@ckeditor/ckeditor5-media-embed/src/mediaembedediting.js';
 import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js';
@@ -50,6 +51,10 @@ import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
+import MediaResizeHandles from './mediaresizehandles';
+import { WidgetResize } from '@ckeditor/ckeditor5-widget/src/index.js';
+import { Plugin } from '@ckeditor/ckeditor5-core/src/index.js';
+
 
 class Editor extends ClassicEditor {}
 
@@ -83,6 +88,7 @@ Editor.builtinPlugins = [
 	List,
 	ListStyle,
 	MediaEmbed,
+  MediaEmbedEditing,
 	MediaEmbedToolbar,
 	Paragraph,
 	PasteFromOffice,
@@ -101,7 +107,10 @@ Editor.builtinPlugins = [
 	TableProperties,
 	TableToolbar,
 	TextTransformation,
-	Underline
+	Underline,
+  Plugin,
+  WidgetResize,
+  MediaResizeHandles,
 ];
 
 export default Editor;

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>CKEditor 5 Framework – Quick start</title>
+        <style>
+          /*
+ * Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
+
+.ck-content .video.video_resized {
+	max-width: 100%;
+	/*
+	The `<figure>` element for resized videos must not use `display:table` as browsers do not support `max-width` for it well.
+	See https://stackoverflow.com/questions/4019604/chrome-safari-ignoring-max-width-in-table/14420691#14420691 for more.
+	Fortunately, since we control the width, there is no risk that the video will look bad.
+	*/
+	display: block;
+	box-sizing: border-box;
+}
+	.ck-content .video.video_resized img {
+		/* For resized videos it is the `<figure>` element that determines the video width. */
+		width: 100%;
+	}
+
+	.ck-content .video.video_resized > figcaption {
+		/* The `<figure>` element uses `display:block`, so `<figcaption>` also has to. */
+		display: block;
+	}
+
+
+
+	/* The resized inline video nested in the table should respect its parent size.
+	See https://github.com/ckeditor/ckeditor5/issues/9117. */
+	.ck.ck-editor__editable td .video-inline.video_resized img,
+	.ck.ck-editor__editable th .video-inline.video_resized img {
+			max-width: 100%;
+		}
+
+
+[dir="ltr"] .ck.ck-button.ck-button_with-text.ck-resize-video-button .ck-button__icon {
+	margin-right: 4px;
+}
+
+[dir="rtl"] .ck.ck-button.ck-button_with-text.ck-resize-video-button .ck-button__icon {
+	margin-left: 4px;
+}
+
+.ck.ck-dropdown .ck-button.ck-resize-video-button .ck-button__label {
+	width: 4em;
+}
+
+
+        </style>
+    </head>
+    <body>
+      <div id="editor">
+        <p>Sample image:</p>
+        <p> https://zima.actiontrails.co/assets/images/details_banner.jpg </p>
+
+        <p> https://www.youtube.com/watch?v=a98LI-arNS4 </p>
+        
+        <figure class="image">
+            <img src="https://via.placeholder.com/1000x300/02c7cd/fff?text=Placeholder%20image" alt="CKEditor 5 rocks!">
+        </figure>
+    </div>
+
+        <script src="dist/ckeditor.js"></script>
+
+        <script>
+        Editor
+    .create( document.querySelector( '#editor' ) )
+    .then( editor => {
+        console.log( editor );
+    } )
+    .catch( error => {
+        console.error( error );
+    } );
+
+        </script>
+
+    </body>
+</html>
